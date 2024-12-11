@@ -34,6 +34,7 @@ Bahasan Materi Meliputi:
 - Git Ignore
 - Git Rebase
 - Git & Web Hosting
+- Git Commit Tips (Spesial)
 
 ## Technology stack & Tools
 
@@ -122,6 +123,71 @@ Jika memeriksa `git status` dan hasilnya modified, bisa gunakan perintah di bawa
 
 ```shell
 git commit -am "menambahkan feature x"
+```
+
+### Commit Tips
+
+Referensi di ambil dari [How to Write Better Git Commit Messages – A Step-By-Step Guide](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)
+
+```shell
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+Daftar-daftar `<type>`:
+
+```shell
+feat: fitur baru yang dikenalkan beserta perubahannya
+fix: telah dilakukan perbaikan bugs
+chore: mengubah hal yang tidak berkaitan dengan feat dan fix, serta memodifikasi bukan pada src atau test file. Misalnya memperbarui dependensi
+refactor: refactor code tanpa memperbaiki bug ataupun menambah fitur
+docs: memperbarui dokumentasi seperti README.md atau file markdown lainnya
+style: perubahan yang tidak mempengaruhi arti dari kode. Misalnya spasi kosong ( ), titik koma (;), kutip satu maupun kutip dua (' atau ") dan lainnya
+test: membuat test baru atau mengoreksi tes sebelumnya
+perf: meningkatkan performansi
+ci: continous integration
+build: perubahan yang berpengaruh pada dependensi eksternal maupun proses build sistem
+revert: kembali ke commit sebelumnya
+```
+
+> [!NOTE]
+> Pesan Commit harus menggunakan huruf kecil nan singkat
+
+#### Contoh fix
+
+```shell
+git commit -m "fix: fixing gallery view bugs"
+
+# versi lengkap
+fix: fix foo to enable bar
+
+This fixes the broken behavior of the component by doing xyz.
+
+BREAKING CHANGE
+Before this fix foo wasn't enabled at all, behavior changes from <old> to <new>
+
+Closes D2IQ-12345
+```
+
+#### Contoh feat
+
+```shell
+git commit -m "feat: Adding new feature login"
+```
+
+#### Contoh perf
+
+```shell
+git commit -m "perf: improve performance with lazy load implementation for images"
+```
+
+#### Contoh chore
+
+```shell
+git commit -m "chore: update laravel version to 11"
 ```
 
 ## Git Log
